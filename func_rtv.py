@@ -5,12 +5,13 @@
 @Author: xiaoshuyui
 @Date: 2020-04-29 15:30:09
 @LastEditors: xiaoshuyui
-@LastEditTime: 2020-04-30 10:39:38
+@LastEditTime: 2020-05-08 13:48:55
 '''
 import cv2
 import numpy as np 
 import copy
 import scipy.sparse as sparse
+from scipy.sparse import csr_matrix
 
 def tsmooth(img,lamda=0.01,sigma=3.0,sharpness=0.02,maxIter=4):
     """
@@ -167,6 +168,8 @@ def solveLinearEquation(IN,wx:np.ndarray,wy:np.ndarray,lamda):
     D = 1-(e+w+s+n)
 
     A = A + A.T +sparse.spdiags(D.T,0,k,k)
+
+    A = csr_matrix(A,dtype=float)
 
     A = A.A.astype(np.float32)
     # print("===============>start")
