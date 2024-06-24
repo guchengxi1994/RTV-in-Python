@@ -20,9 +20,9 @@ this is how RTV works in images with textures.
 
 the corresponding MatLab codes and demo images can be found in folder "matlab code" 
 
-#### This  is  the Python Version of RTV and there may be some small problems such as the memory related error. Code line 232, A = A.A ,when i try to convert scipy.sparse.csr.csr_matrix to numpy.ndarray ,if the image is large( specifically, i think over 80*80 is large enough) ,a MemoryError is raised.
+use [rtv2.py](./rtv2.py) to test.
 
-#### i test the method on lena.
+#### ~~This  is  the Python Version of RTV and there may be some small problems such as the memory related error. Code line 232, A = A.A ,when i try to convert scipy.sparse.csr.csr_matrix to numpy.ndarray ,if the image is large( specifically, i think over 80*80 is large enough) ,a MemoryError is raised.~~
 
 
 ![Demo](./imgs/lena.png)
