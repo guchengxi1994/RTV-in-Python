@@ -1,7 +1,9 @@
 import numpy as np
 import cv2
 from scipy.sparse import spdiags, csr_matrix
-from scipy.sparse.linalg import spsolve
+# from scipy.sparse.linalg import spsolve
+from pypardiso import spsolve
+
 
 
 def tsmooth(I, lambda_=0.01, sigma=3.0, sharpness=0.02, maxIter=4):
@@ -90,7 +92,7 @@ def solveLinearEquation(IN, wx, wy, lambda_):
     OUT = np.zeros_like(IN)
     for i in range(ch):
         tin = IN[:, :, i].ravel(order="F")
-        tout = spsolve(A, tin)
+        tout = spsolve(A.astype(np.float64), tin.astype(np.float64))
         OUT[:, :, i] = tout.reshape((r, c), order="F")
 
     return OUT
