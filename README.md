@@ -39,4 +39,5 @@ use [rtv2.py](./rtv2.py) to test.
 ## quick use
 
 > pip install -r requirements.txt
+> 
 > python rtv2.py
