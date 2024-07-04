@@ -22,9 +22,6 @@ the corresponding MatLab codes and demo images can be found in folder "matlab co
 
 use [rtv2.py](./rtv2.py) to test.
 
-#### ~~This  is  the Python Version of RTV and there may be some small problems such as the memory related error. Code line 232, A = A.A ,when i try to convert scipy.sparse.csr.csr_matrix to numpy.ndarray ,if the image is large( specifically, i think over 80*80 is large enough) ,a MemoryError is raised.~~
-
-
 ![Demo](./imgs/lena.png)
 
 
@@ -36,4 +33,10 @@ use [rtv2.py](./rtv2.py) to test.
 
 ![Demo](./imgs/431.jpg)
 
-#### you can test MatLab codes on https://octave-online.net/ ,it is a convenient matlab online tool. but the large-image-problem  still occurs in another way: out of time. :)
+#### you can test MatLab codes on https://octave-online.net/ ,it is a convenient matlab online tool. :)
+
+
+## quick use
+
+> pip install -r requirements.txt
+> python rtv2.py
